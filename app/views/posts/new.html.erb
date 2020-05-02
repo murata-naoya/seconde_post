@@ -1,0 +1,34 @@
+<div class="col-12">
+<h2>2ndステージslack投稿ページ</h2>
+    <%= form_tag(posts_path, method: :post) do %>
+    <div class="form-group form-margin">
+        <h5>チャンネルを選択する</h5>
+        <%= select_tag :channel, options_for_select([["tech","2"]]), class: "form-control" %>
+    </div> 
+    <div class="form-group form-margin">
+        <h5>題名</h5>
+        <%= text_field_tag :title, "", class: "form-control" %>
+        <div class="post_image">
+            <p>※投稿イメージ<br>2ndアナウンス<span> →</span>【2ndアナウンス】</p>
+        </div>
+    </div>
+    <div class="form-group form-margin">
+        <h5>投稿内容</h5>
+        <%= text_area_tag :body, "", rows: 15, class: "form-control" %>
+    </div>
+
+    <div class="check-list form-group form-margin">
+        <button type="button" class="button-class btn btn-secondary" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+            以下の内容を全て確認の上、投稿をお願いいたします。
+        </button>
+    </div>
+    <div class="collapse" id="collapseExample">
+        <span>注意事項</span>
+        <p>・絵文字は使用できません。<br>&emsp;もし絵文字を絶対に入れたいという場合はST部署依頼チャンネルで依頼の方をお願いいたします。<br>&emsp;ELITE CAMP事務局からの投稿では、絵文字・"！"などは控えています。</p>
+        <p>・メンションは使用できません。<br>&emsp;ユーザー・チャンネルへのリンクをテキスト内に入れることはできません。<br>&emsp;もし絶対にメンションをしたいという方は、ST部署依頼チャンネルから依頼をお願いいたします。</p>
+        <p>・タイトルは必ずつけてください。<br>&emsp;その際、【】は自動的につくので、つけないでください。投稿イメージにも書いてあります。</p>
+    </div>
+
+    <%= submit_tag "以上の内容で投稿する", class: "btn btn-primary form-control form-margin" %>
+    <% end %>
+</div>
